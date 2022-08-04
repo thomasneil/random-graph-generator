@@ -79,13 +79,13 @@
           .nice();
 
         g.selectAll('circle').data(data)
-          .enter().append('circle')
+          .enter().append(svg:a).append('circle')
             .attr('cx', d => xScale(xValue(d)))
             .attr('cy', d => yScale(yValue(d)))  
             .attr('fill-opacity', 0.6)
 	    .style("fill", "#f2b980")
-	    .attr("xlink:href", "www.google.com")  
-            .attr('r', 8);
+	    .attr("xlink:href", function(d){return d.link;})  
+            .attr('r', 8).on("mouseover", mouseover ).on("mousemove", mousemove ).on("mouseleave", mouseleave );
 
         xAxisG.call(xAxis);
         yAxisG.call(yAxis);
