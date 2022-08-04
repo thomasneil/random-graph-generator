@@ -85,7 +85,7 @@ d3.csv("display_rss_articles.csv", function(data) {
   svg.append('g')
     .selectAll("dot")
     .data() // the .filter part is just to keep a few dots on the chart, not all of them
-    .enter()
+    .enter(data)
     .append("circle")
       .attr("cx", function (d) { return x(d.Pub_Date); } )
       .attr("cy", function (d) { return y(d['Unnamed: 0']); } )
