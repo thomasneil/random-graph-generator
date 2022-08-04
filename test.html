@@ -82,7 +82,8 @@
             .attr('cx', d => xScale(xValue(d)))
             .attr('cy', d => yScale(yValue(d)))  
             .attr('fill-opacity', 0.6)
-	    .style("fill", "#f2b980")  
+	    .style("fill", "#f2b980")
+	    .attr("xlink:href", d.link)  
             .attr('r', 8);
 
         xAxisG.call(xAxis);
