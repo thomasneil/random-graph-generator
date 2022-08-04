@@ -13,10 +13,10 @@
 </body>
 <script>
 
-      const xValue = d => d.timestamp;
+      const xValue = d => d.Pub_Date;
       const xLabel = 'Time';
-      const yValue = d => d.temperature;
-      const yLabel = 'Temperature';
+      const yValue = d => d['Unnamed: 0'];
+      const yLabel = 'Article_ID';
       const margin = { left: 120, right: 30, top: 20, bottom: 120 };
 
       const svg = d3.select('svg');
@@ -60,8 +60,8 @@
         .tickSize(-innerWidth);
 
       const row = d => {
-        d.timestamp = new Date(d.timestamp);
-        d.temperature = +d.temperature;
+        d.Pub_Date = new Date(d.Pub_Date);
+        d['Unnamed: 0'] = +d['Unnamed: 0'];
         return d;
       };
 
