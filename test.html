@@ -79,7 +79,7 @@
           .nice();
 
         g.selectAll('circle').data(data)
-          .enter().append(svg:a).attr("xlink:href", function(d){return d.link;}).append('circle')
+          .enter().append('svg:a').attr("xlink:href", function(d){return d.link;}).append('circle')
             .attr('cx', d => xScale(xValue(d)))
             .attr('cy', d => yScale(yValue(d)))  
             .attr('fill-opacity', 0.6)
